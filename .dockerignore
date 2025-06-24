@@ -1,0 +1,48 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+env/
+venv/
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Test and debug artifacts
+*.log
+*.sqlite3
+*.db
+
+# Python cache
+*.egg-info/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Git files
+.git/
+.gitignore
+
+# Docker-related
+Dockerfile
+docker-compose.yml
+
+# Data artifacts (if large or temporary)
+*.faiss
+*.csv
+*.zip
+*.tar
+*.gz
+
+# Cached transformers models (optional)
+~/.cache/
+
