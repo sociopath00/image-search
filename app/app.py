@@ -1,6 +1,4 @@
-# app/main.py
-
-from fastapi import FastAPI, Query
+from fastapi import FastAPI
 from pydantic import BaseModel
 from app.inference import search_images
 from app.explain import generate_explanation
@@ -21,6 +19,6 @@ def search_api(request: SearchRequest):
 
 @app.post("/explain")
 def explain_api(request: ExplanationRequest):
-    # explanation = generate_explanation(request.image_path, request.query)
-    explanation = "Not Found"
+    explanation = generate_explanation(request.image_path, request.query)
+    # explanation = "Not Found"
     return {"explanation": explanation}

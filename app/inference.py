@@ -7,7 +7,7 @@ import pandas as pd
 from transformers import CLIPProcessor, CLIPModel
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-device = "mps" if torch.mps.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 
 # Load ONCE
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)

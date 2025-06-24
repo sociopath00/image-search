@@ -15,7 +15,7 @@ INDEX_OUTPUT = "image_index.faiss"
 METADATA_OUTPUT = "image_metadata.csv"
 
 # MODEL SETUP 
-device = "mps" if torch.mps.is_available() else "cpu"
+device = torch.accelerator.current_accelerator().type if torch.accelerator.is_available() else "cpu"
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 

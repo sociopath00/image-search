@@ -11,7 +11,7 @@ def generate_explanation(image_path: str, query: str) -> str:
         image_b64 = base64.b64encode(img_file.read()).decode("utf-8")
 
     response = openai.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "You are an expert image analyst who explains how visual content matches text queries."},
             {"role": "user", "content": [
